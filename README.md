@@ -6,7 +6,7 @@ POC for using webpack and goja to import javascript methods with 3rd party depen
 
 Main idea is:
 
-- make js bundle using webpackage which includes some 3rd part dependency.
+- make js bundle using webpack which includes some 3rd party dependency.
 - load the bundle in Go using goja and call the js fn.
 
 # Workflow
@@ -24,4 +24,4 @@ Webpack bundles the code including dependencies and then goja reads the bundle a
 # thoughts
 
 - cgo/v8 wrapper mentioned in goja might fit my usecase better. Sounds like the js crypto stuff will be more performant and im not going to call it a lot https://github.com/dop251/goja
-- looks like it's not node based and perhaps this would work better, although it doesn't seem fully featured https://github.com/dop251/goja_nodejs
+- looks like there is a seperate node compatibility repo. guessing the crypto library from node may not be available in goja... but maybe here? https://github.com/dop251/goja_nodejs
